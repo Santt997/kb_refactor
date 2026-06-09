@@ -1,16 +1,42 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=69"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "kb_refactor"
-version = "0.1.0"
-description = "cast from kb_refactor src 2pypi"
+version = "0.1.1"
+description = "Automatic knowledge-base notebook link refactorizer"
 readme = "README.md"
-requires-python = ">=3.8"
-dependencies = [
-    
+requires-python = ">=3.11"
+
+authors = [
+    { name = "Santiago Burastero" }
 ]
 
+dependencies = []
+
+keywords = [
+    "knowledge-base",
+    "jupyter",
+    "notebook",
+    "markdown",
+    "links",
+    "refactor",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+kb_refactor = "kb_refactor.cli:main"
+
 [tool.setuptools]
-packages = ["kb_refactor"]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
