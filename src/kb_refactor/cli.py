@@ -2,16 +2,16 @@ import argparse
 import json
 from pathlib import Path
 
-from kb_refactor.src.kb_refactor.idx import (
+from kb_refactor.idx import (
     build_index,
     iter_ipynbs,
 )
 
-from kb_refactor.src.kb_refactor.ipynb import (
+from kb_refactor.ipynb import (
     process_ipynb,
 )
 
-from kb_refactor.src.kb_refactor.stats import Stats
+from kb_refactor.stats import Stats
 
 
 def parse_args():
