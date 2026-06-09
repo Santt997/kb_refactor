@@ -12,7 +12,7 @@ EXCLUDED_DIRS : set[str] = {
 }
 
 
-def iter_notebooks(root: Path):
+def iter_ipynbs(root: Path):
     for path in root.rglob('*.ipynb'):
         if any(part in EXCLUDED_DIRS for part in path.parts):
             continue
@@ -28,7 +28,7 @@ def load_notebook(path: Path):
 def build_index(root: Path) -> dict[str, Path]:
     idx : dict[str, Path] = {}
 
-    for nb_path in iter_notebooks(root):
+    for nb_path in iter_ipynbs(root):
 
         nb = load_notebook(nb_path)
 
