@@ -18,7 +18,7 @@ remove:
 run:
 	@eval "$$(micromamba shell hook --shell bash)" && \
 	micromamba activate $(ENV_NAME) && \
-	python -m kb_refactor
+	python -m kb_refactor.cli
 
 debug:
 	@echo "ENV_NAME=$(ENV_NAME)"
