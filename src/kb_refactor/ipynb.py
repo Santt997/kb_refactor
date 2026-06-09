@@ -77,7 +77,7 @@ def process_markdown(
     return text
 
 
-def process_notebook(
+def process_ipynb(
     ipynb_path: Path,
     idx: dict[str, Path],
 ) -> tuple[Any, bool]:
@@ -85,11 +85,11 @@ def process_notebook(
         'r',
         encoding='utf-8',
     ) as f:
-        notebook = json.load(f)
+        ipynb = json.load(f)
 
     changed = False
 
-    for cell in notebook.get('cells', []):
+    for cell in ipynb.get('cells', []):
 
         if cell.get('cell_type') != 'markdown':
             continue
@@ -110,4 +110,4 @@ def process_notebook(
                 keepends=True
             )
 
-    return notebook, changed
+    return ipynb, changed
