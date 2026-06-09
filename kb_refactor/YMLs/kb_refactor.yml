@@ -1,0 +1,17 @@
+name: kb-refactor
+channels:
+  - nodefaults
+  - conda-forge
+
+dependencies:
+  - python=3.13
+  - pip
+  - ipykernel
+
+  # Packaging
+  - build
+  - twine
+  - hatchling
+
+  # Quality
+  - ruff
