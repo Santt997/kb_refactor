@@ -100,7 +100,7 @@ def main() -> None:
         )
 
     print(
-        f'Updated ipynbs: {changed}'
+        f'Updated nbs: {changed}'
     )
 
     if args.stats:
